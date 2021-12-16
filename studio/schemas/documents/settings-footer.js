@@ -1,0 +1,55 @@
+export default {
+  title: 'Footer Settings',
+  name: 'footerSettings',
+  type: 'document',
+  // __experimental_actions: ['update', 'publish'], // disable for initial publish
+  fieldsets: [
+    {
+      title: 'Block Two',
+      name: 'footerBlock2',
+      description: 'Settings for the second footer block',
+      options: { collapsible: true },
+    },
+    {
+      title: 'Block Four',
+      name: 'footerBlock4',
+      description: 'Settings for the fourth footer block',
+      options: { collapsible: true },
+    },
+  ],
+  fields: [
+    {
+      title: 'Block Title',
+      name: 'blockTitle2',
+      type: 'string',
+      fieldset: 'footerBlock2',
+    },
+    {
+      title: 'Block Menu',
+      name: 'blockMenu2',
+      type: 'reference',
+      to: [{ type: 'menu' }],
+      fieldset: 'footerBlock2',
+    },
+    {
+      title: 'Block Title',
+      name: 'blockTitle4',
+      type: 'string',
+      fieldset: 'footerBlock4',
+    },
+    {
+      title: 'Social Links',
+      name: 'social',
+      type: 'array',
+      of: [{ type: 'socialLink' }],
+      fieldset: 'footerBlock4',
+    },
+  ],
+  preview: {
+    prepare() {
+      return {
+        title: 'Footer Settings',
+      };
+    },
+  },
+};

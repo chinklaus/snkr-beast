@@ -1,0 +1,40 @@
+{
+  "name": "snkr-head",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"next\" \"cd studio && sanity start\"",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && next build",
+    "start": "vercel dev",
+    "startlocal": "next start",
+    "postinstall": "cd studio && npm install"
+  },
+  "dependencies": {
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^2.21.7",
+    "@sanity/image-url": "^1.0.1",
+    "@styled-jsx/plugin-sass": "^4.0.1",
+    "@vimeo/player": "^2.15.3",
+    "axios": "^0.24.0",
+    "base64-string": "^1.1.2",
+    "classnames": "^2.2.6",
+    "framer-motion": "^5.4.5",
+    "js-cookie": "^3.0.0",
+    "next": "11.1.0",
+    "next-sanity": "^0.4.0",
+    "react": "17.0.2",
+    "react-hook-form": "^7.18.0",
+    "react-cool-inview": "^2.0.8",
+    "react-dom": "17.0.2",
+    "react-fast-marquee": "^1.2.1",
+    "react-responsive": "^9.0.0-beta.5",
+    "sass": "^1.38.0"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "@sanity/cli": "^2.0.5",
+    "concurrently": "^5.3.0",
+    "lerna": "^3.22.1"
+  }
+}

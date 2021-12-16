@@ -1,0 +1,90 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 45px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0) rotate(-1deg);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0) rotate(2deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0) rotate(-4deg);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0) rotate(4deg);
+  }
+}
+
+#main,
+.global-footer {
+  opacity: 0;
+}
+
+html.is_loaded #main,
+html.is_loaded .global-footer {
+  -webkit-animation: 0.8s 0.4s fadeIn both;
+  animation: 0.8s 0.4s fadeIn both;
+}
+
+html.is_leaving #main,
+html.is_leaving .global-footer {
+  animation: 0.4s fadeOut both;
+}
+
+[data-animate] > * {
+  opacity: 0;
+}
+
+[data-animate].is-animated > * {
+  animation: fadeIn 1.6s ease-out both;
+}
+
+.lazyload,
+img[data-sizes='auto'] {
+  display: block;
+  width: 100%;
+  opacity: 0;
+}
+
+.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+.lazyloaded {
+  animation: 1.2s fadeIn both;
+}
